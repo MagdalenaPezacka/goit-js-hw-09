@@ -1,0 +1,1 @@
+{"mappings":"AAGcA,SAASC,cAAc,UACvBD,SAASC,cAAc","sources":["src/js/02-timer.js"],"sourcesContent":["// import flatpickr from \"flatpickr\";\n// import \"flatpickr/dist/flatpickr.min.css\";\n\nconst value = document.querySelector('.value');\nconst label = document.querySelector('.label');\n"],"names":["document","querySelector"],"version":3,"file":"02-timer.051c88ac.js.map"}
