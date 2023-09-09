@@ -33,18 +33,23 @@ button[data-stop] {
   border-radius: 12px;
   background-color: lavender;
   border: 2px solid #000000;
-  position: relative;
 }
 button:active {
+  position: relative;
   top: 2px;
 }
 
-/* #datetime-picker {
+input#datetime-picker {
   background-color: pink;
   border-radius: 8px;
   height: 30px;
+  width: 200px;
   border: 2px solid #000000;
-} */
+  text-align: center;
+  color: #000000;
+  font-weight: 500;
+}
+
 .timer {
   display: flex;
   margin-top: 10px;

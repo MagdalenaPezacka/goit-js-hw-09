@@ -14,18 +14,18 @@ startBtn.disabled = true;
 timer = null;
 
 const options = {
-    enableTime: true,
-    time_24hr: true,
-    defaultDate: new Date(),
-    minuteIncrement: 1,
-    onClose(selectedDates) {
-        if (selectedDates[0].getTime() < options.defaultDate) {
-            Notiflix.Notify.failure('Please, choose a date in the future');
-        } else {
-            startBtn.disabled = false;
-        };
-    }
-}
+  enableTime: true,
+  time_24hr: true,
+  defaultDate: new Date(),
+  minuteIncrement: 1,
+  onClose(selectedDates) {
+    if (selectedDates[0].getTime() < options.defaultDate) {
+      Notiflix.Notify.failure('Please, choose a date in the future');
+    } else {
+      startBtn.disabled = false;
+    };
+  }
+};
 
 const datePicker = flatpickr(picker, options);
 
@@ -68,7 +68,7 @@ function convertMs(ms) {
   const seconds = addLeadingZero(Math.floor((((ms % day) % hour) % minute) / second));
 
   return { days, hours, minutes, seconds };
-}
+};
 
 function addLeadingZero(value){
   if (value < 10)
