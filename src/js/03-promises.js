@@ -8,3 +8,7 @@ function createPromise(position, delay) {
     // Reject
   }
 }
+
+
+Notiflix.Notify.success('Fulfilled promise ${} in ${} ms');
+Notiflix.Notify.failure('Rejected promise ${} in ${} ms');
