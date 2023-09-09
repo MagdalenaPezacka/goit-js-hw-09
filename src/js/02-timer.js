@@ -29,6 +29,28 @@ const options = {
 
 const datePicker = flatpickr(picker, options);
 
+function startTimer() {
+  const ms = datePicker.selectedDates[0] - Date.now();
+  const timerTime = convertMs(ms);
+  const { days, hours, minutes, seconds } = timerTime;
+  daysCounter.textContent = days;
+  hoursCounter.textContent = hours;
+  minutesCounter.textContent = minutes;
+  secondsCounter.textContent = seconds;
+  startBtn.disabled = true;
+
+  if (ms <= 1000) {
+    clearInterval(timer);
+    Notiflix.Notify.success('Timer has stopped');
+    }
+};
+
+startBtn.addEventListener('click', () => {
+  timer = setInterval(() => {
+    startTimer();
+  }, 1000);
+});
+
 function convertMs(ms) {
 // Number of milliseconds per unit of time
   const second = 1000;
