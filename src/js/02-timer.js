@@ -9,7 +9,6 @@ const hoursCounter = document.querySelector('[data-hours]');
 const minutesCounter = document.querySelector('[data-minutes]');
 const secondsCounter = document.querySelector('[data-seconds]');
 
-
 startBtn.disabled = true;
 let timer = null;
 
@@ -23,8 +22,8 @@ const options = {
       Notiflix.Notify.failure('Please, choose a date in the future');
     } else {
       startBtn.disabled = false;
-    };
-  }
+    }
+  },
 };
 
 const datePicker = flatpickr(picker, options);
@@ -42,8 +41,8 @@ function startTimer() {
   if (ms <= 1000) {
     clearInterval(timer);
     Notiflix.Notify.success('Timer has stopped');
-    }
-};
+  }
+}
 
 startBtn.addEventListener('click', () => {
   timer = setInterval(() => {
@@ -52,30 +51,33 @@ startBtn.addEventListener('click', () => {
 });
 
 function convertMs(ms) {
-// Number of milliseconds per unit of time
+  // Number of milliseconds per unit of time
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
   const day = hour * 24;
 
-// Remaining days
+  // Remaining days
   const days = addLeadingZero(Math.floor(ms / day));
-// Remaining hours
+  // Remaining hours
   const hours = addLeadingZero(Math.floor((ms % day) / hour));
-// Remaining minutes
+  // Remaining minutes
   const minutes = addLeadingZero(Math.floor(((ms % day) % hour) / minute));
-// Remaining seconds
-  const seconds = addLeadingZero(Math.floor((((ms % day) % hour) % minute) / second));
+  // Remaining seconds
+  const seconds = addLeadingZero(
+    Math.floor((((ms % day) % hour) % minute) / second)
+  );
 
   return { days, hours, minutes, seconds };
-};
+}
 
-function addLeadingZero(value){
-  if (value < 10)
+function addLeadingZero(value) {
+  if (value < 10) {
     return String(value).padStart(2, '0');
+  } else {
     return value;
-};
-
+  }
+}
 
 // konspekt
 // startBtn.addEventListener("click", () => {
@@ -83,4 +85,3 @@ function addLeadingZero(value){
 //     console.log(`I love async JS!  ${Math.random()}`);
 //   }, 1000);
 // });
-
